@@ -1,0 +1,88 @@
+.container {
+  color: #555;
+  background:linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)),
+          url("../../assets/images/login-banner.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  padding-top: 100px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+
+  .card {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+  }
+
+  .header {
+    font-size: 27px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+
+  }
+  #form-feedback {
+    font-size: 14px;
+    padding: 0px 5px;
+  }
+  #form-feedback.success {
+    color: #36966c;
+  }
+  #form-feedback.error {
+    color: #8a0f0f;
+  }
+  .form-group {
+    margin: 5px 0 20px 0;
+    width: 100%;
+    padding: 6px;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .form-control {
+    padding: 14px;
+    width: 100%;
+    outline: none;
+    border: solid 1px #888;
+    border-radius: 4px;
+  }
+  span.error {
+    font-size: 13px;
+    color: #8a0f0f;
+    display: inline-block;
+    padding-top: 8px;
+  }
+  #submit {
+    padding: 15px;
+    width: 100%;
+    border-radius: 4px;
+    margin: 15px 0px 40px 0px;
+    background-color: #F3994A;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  .forgot-password, .sign-up {
+    color: #F3994A;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  @media screen and (max-width: 600px) {
+    .container {
+      pdddadding: 10px 30px;
+    }
+  }
+}
