@@ -1,5 +1,4 @@
 import {
-  SIGNUP_ERROR,
   LOGIN_ERROR,
   INIT_AUTH_REQUEST,
   END_AUTH_REQUEST,
@@ -32,11 +31,6 @@ export default (state = initialState, action) => {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload,
-      };
-    case SIGNUP_ERROR:
-      return {
-        ...state,
-        errors: action.payload,
       };
     case LOGIN_ERROR:
       return {
