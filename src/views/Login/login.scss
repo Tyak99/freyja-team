@@ -1,0 +1,91 @@
+.container  {
+  background:linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)),
+          url("../../assets/images/login-banner.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;  
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 500px;
+    padding: 50px;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+  }
+
+  .header {
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: center;
+  }
+  .logo {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin: 0px auto 20px auto;
+    display: inline-block;
+  }
+  #form-feedback {
+    font-size: 14px;
+    padding: 0px 5px;
+  }
+  #form-feedback.success {
+    color: #36966c;
+  }
+  #form-feedback.error {
+    color: #8a0f0f;
+  }
+  .inf.form-group {
+    margin: 20px 0px 0px 0px;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .form-control {
+    padding: 14px;
+    width: 100%;
+    outline: none;
+    border: solid 1px #888;
+    border-radius: 4px;
+  }
+  span.error {
+    color: #8a0f0f;
+    display: inline-block;
+    font-size: 13px;
+    padding-top: 8px;
+  }
+  .submit {
+    background-color: #F3994A;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 45px 0px 40px 0px;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+  }
+  .forgot-password, .sign-up {
+    color: #F3994A;
+    font-size: 15px;
+    text-decoration: none;
+  }
+}
