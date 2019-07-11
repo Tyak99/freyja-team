@@ -1,9 +1,21 @@
+$theme-color: #f3994a;
+$text-color: #fff;
+
 .b-button {
-  background-color: #f3994a;
+  background-color: $theme-color;
   border-radius: 4px;
-  color: #fff;
+  color: $text-color;
   cursor: pointer;
   font-size: 15px;
   padding: 14px;
   width: 100%;
+
+  &:hover,
+  &:focus {
+    .b-button {
+      background-color: $theme-color;
+      border: 0;
+      box-shadow: none;
+    }
+  }
 }

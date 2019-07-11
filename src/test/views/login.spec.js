@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import { Login } from '../../views/Login/Login';
+import { Login } from '../../views/Login/login';
 import { loginUser } from '../../store/actions/authActions';
 
 function shallowSetup() {
@@ -92,4 +92,22 @@ describe('Login component methods', () => {
     form.simulate('submit', mockedEvent);
     expect(Login.prototype.handleSubmit.calledOnce).toBe(true);
   });
+
+  it('should handle validation after form is submitted', () => {
+    const { enzymeWrapper } = shallowSetup();
+    enzymeWrapper.setState({
+      email: 'davidchizindu.com',
+      password: '',
+      validationErrors: {},
+    });
+
+    const form = enzymeWrapper.find('#form');
+    const mockedEvent = {
+      target: {},
+      preventDefault: () => ({}),
+    };
+
+    form.simulate('submit', mockedEvent);
+    expect(Login.prototype.handleSubmit.calledOnce).toBe(true);
+  }); 
 });

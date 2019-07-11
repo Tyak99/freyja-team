@@ -1,0 +1,11 @@
+options:
+  merge-default-rules: false
+  formatter: stylish
+  max-warnings: 50
+
+files:
+  include: 'sass/**/*.s+(a|c)ss'
+
+rules:
+  no-important: 1
+  no-color-literals: 0 

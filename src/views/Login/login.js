@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import Logo from '../../assets/images/logo3.png';
+import Navbar from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
@@ -31,7 +32,9 @@ export class Login extends Component {
 
     this.setState({
       [e.target.name]: e.target.value,
-      validationErrors: { ...validationErrors, [e.target.name]: '' },
+      validationErrors: {
+        ...validationErrors, [e.target.name]: '',
+      },
     });
   }
 
@@ -102,8 +105,8 @@ export class Login extends Component {
 
     return (
       <React.Fragment>
-        {/* <Navbar /> */}
-        <section className="container">
+        <Navbar />
+        <section className="l-container">
           <Card className="form-container">
             <Form onSubmit={this.handleSubmit} id="form">
 
@@ -122,7 +125,6 @@ export class Login extends Component {
                 name="email"
                 value={this.state.email}
                 placeholder="Enter Email"
-                displayError={email}
               />
               <span className="error">{email || ''}</span>
 
