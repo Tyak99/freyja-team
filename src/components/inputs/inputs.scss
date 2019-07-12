@@ -1,5 +1,5 @@
 $input-color: #f2994a;
-$feedback: #ff0000;
+$feedback: #f00;
 $border: #707070;
 
 .input {
@@ -48,16 +48,13 @@ $border: #707070;
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-size: 12px;
 }
 
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   font-size: 12px;
 }
 
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
   font-size: 12px;
 }

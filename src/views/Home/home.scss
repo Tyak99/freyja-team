@@ -3,16 +3,14 @@ $white: #fff;
 $black: #000;
 $lp-animation-color: rgba(0, 0, 0, 0.7);
 
-
-
 .landing-container {
   height: 100vh;
   position: relative;
 }
 
-.slide-container{
-  height: 90vh;
+.slide-container {
   background: $black;
+  height: 90vh;
 }
 
 .icons-holder {
@@ -61,7 +59,6 @@ img.info {
 .hiw-content {
   background: $base-color;
   padding: 20px;
-    
 }
 
 .hiw-card-content.card {
@@ -69,7 +66,7 @@ img.info {
 }
 
 .hiw .hiw-card {
-  border: none;
+  border: 0;
 }
 
 .hiw-card .card-body {
@@ -127,10 +124,10 @@ a .absolute-button {
   width: 200px;
   padding: 20px;
   text-align: center;
-  top:50%;
+  top: 50%;
   z-index: 35;
   background: $base-color;
-  border: none;
+  border: 0;
 }
 
 .card-body-content.card-body {
@@ -177,7 +174,7 @@ a .absolute-button:hover {
 // Biz slide
 .slide-container li:nth-child(1) {
   animation-delay: 15s;
-  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing1.jpg")
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing1.jpg");
 }
 
 .slide-container li:nth-child(2) {
@@ -188,6 +185,7 @@ a .absolute-button:hover {
   animation-delay: 30s;
   background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing3.jpg");
 }
+
 // testimonial slide
 .t-slide li:nth-child(2) {
   animation-delay: 15s;
@@ -198,7 +196,7 @@ a .absolute-button:hover {
 }
 
 @keyframes imageAnimation {
-  0% { 
+  0% {
     opacity: 0;
     animation-timing-function: ease-in;
   }
@@ -246,7 +244,7 @@ a .absolute-button:hover {
   }
 
   .hiw-card .card-body {
-    padding: 0; 
+    padding: 0;
   }
 
   .about-us,
@@ -285,8 +283,9 @@ a .absolute-button:hover {
   }
 
   a .absolute-button {
-    top:55%;
+    top: 55%;
   }
+
   .desc-container {
     top: 105%;
   }
@@ -295,6 +294,7 @@ a .absolute-button:hover {
     font-size: 40px;
     padding: 0;
   }
+
   img.info {
     padding: 10px;
 
@@ -311,5 +311,4 @@ a .absolute-button:hover {
   .hwu h4 {
     font-size: 25px;
   }
-    
 }
