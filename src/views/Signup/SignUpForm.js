@@ -5,9 +5,9 @@ import { Card, CardBody } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/images/logo3.png';
-import { Heading } from '../../components/Heading/heading';
+import { Heading } from '../../components/heading/heading';
 import Navbar from '../../components/Header/Header';
-import Input from '../../components/Inputs/Input';
+import Input from '../../components/inputs/input';
 import Button from '../../components/Button/index';
 import './SignUp.scss';
 
