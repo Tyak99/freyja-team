@@ -1,35 +1,26 @@
 import React, { Fragment } from 'react';
-import { FormGroup, Input } from 'reactstrap';
-import classnames from 'classnames';
+import 'bootstrap/dist/css/bootstrap.css';
 import PropTypes from 'prop-types';
 import './inputs.scss';
 
 const InputField = ({
-  type,
-  placeholder,
-  name,
-  displayError,
-  onChange,
-  value,
+  id, type, placeholder, name, onChange, value,
 }) => (
   <Fragment>
-    <FormGroup className="inf">
-      <Input
-        className={classnames('input firstname', {
-          'is-invalid': { displayError },
-        })}
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        value={value}
-        onChange={onChange}
-      />
-    </FormGroup>
+    <input
+      id={id}
+      className="input"
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      onChange={onChange}
+    />
   </Fragment>
 );
 InputField.propTypes = {
-  displayError: PropTypes.string,
   type: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
