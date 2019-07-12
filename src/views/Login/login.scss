@@ -1,0 +1,114 @@
+$theme-color: #f3994a;
+$success-color: #36966c;
+$error-color: #8a0f0f;
+$text-color: #555;
+$btn-text-color: #fff;
+
+.l-container  {
+  background: linear-gradient(
+    rgba(0, 0, 0, .4),
+    rgba(0, 0, 0, .4)), url('../../assets/images/login-banner.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
+  padding: 80px 0 100px;
+
+  .card {
+    margin: auto;
+    max-width: 500px;
+    padding: 30px 20px 20px;
+    height: auto;
+  }
+
+  .header {
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 17px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    margin: 0 auto 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  #form-feedback {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  #form-feedback.success {
+    color: $success-color;
+  }
+
+  #form-feedback.error {
+    color: $error-color;
+  }
+
+  #email-input,
+  #password-input {
+    margin: 10px 0 0;
+  }
+
+  #password-input {
+    margin-top: 30px;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    border: solid 1px #888;
+    border-radius: 4px;
+    outline: none;
+    padding: 14px;
+    width: 100%;
+  }
+
+  span.error {
+    color: $error-color;
+    display: inline-block;
+    font-size: 13px;
+    padding-top: 8px;
+  }
+
+  .submit {
+    background-color: $theme-color;
+    border: 0;
+    border-radius: 4px;
+    color: $btn-text-color;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 35px 0 30px;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    .submit {
+      background-color: $theme-color;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
+  .forgot-password,
+  .sign-up {
+    color: $theme-color;
+    font-size: 15px;
+    text-decoration: none;
+  }
+}

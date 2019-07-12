@@ -1,35 +1,31 @@
 import React, { Fragment } from 'react';
-import { FormGroup, Input } from 'reactstrap';
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import 'bootstrap/dist/css/bootstrap.css';
 import './inputs.scss';
 
 const InputField = ({
   type,
   placeholder,
   name,
-  displayError,
   onChange,
   value,
+  id,
 }) => (
   <Fragment>
-    <FormGroup className="inf">
-      <Input
-        className={classnames('input firstname', {
-          'is-invalid': { displayError },
-        })}
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        value={value}
-        onChange={onChange}
-      />
-    </FormGroup>
+    <input
+      id={id}
+      className="input"
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      onChange={onChange}
+    />
   </Fragment>
 );
 InputField.propTypes = {
-  displayError: PropTypes.string,
   type: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
@@ -38,5 +34,7 @@ InputField.propTypes = {
 
 InputField.defaultProps = {
   type: 'text',
+
 };
+
 export default InputField;
