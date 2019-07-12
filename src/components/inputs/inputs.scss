@@ -1,0 +1,24 @@
+.input {
+  margin: auto;
+  border: 0.5px solid #707070;
+  width: 80%;
+  padding: .6rem;
+  border-radius: 5px;
+
+}
+.input:active,
+.input:focus,
+.input:focus-within {
+  outline-color:#f2994a;
+  border: 0.5px solid #f2994a;
+}
+.example {
+  width: 400px;
+  background: #ffffff;
+  border-radius: 5px;
+  margin: auto;
+  z-index: 1000;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}

@@ -1,0 +1,32 @@
+$white: #ffffff;
+$primary: #5f3518;
+$primary-hover: #775945;
+
+.nav-style {
+  background: $primary;
+  color: $white;
+
+  .nav-brand {
+    color: $white;
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1rem;
+    padding-bottom: 0.3125rem;
+    padding-top: 0.3125rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .button-style {
+    background: $primary;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 10px;
+
+    &:hover {
+      background: $primary-hover;
+    }
+  }
+}

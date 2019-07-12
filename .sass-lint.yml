@@ -1,0 +1,17 @@
+options:
+  merge-default-rules: false
+  formatter: stylish
+  max-warnings: 50
+
+files:
+  include: 'sass/**/*.s+(a|c)ss'
+
+rules:
+   no-important: 1
+   no-color-literals: 0
+   no-color-hex: 0
+   no-ids: 0
+   force-pseudo-nesting: 0
+   property-sort-order: 0
+   pseudo-element: 0
+   shorthand-values: 0

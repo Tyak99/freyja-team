@@ -1,0 +1,315 @@
+$base-color: #5f3518;
+$white: #fff;
+$black: #000;
+$lp-animation-color: rgba(0, 0, 0, 0.7);
+
+
+
+.landing-container {
+  height: 100vh;
+  position: relative;
+}
+
+.slide-container{
+  height: 90vh;
+  background: $black;
+}
+
+.icons-holder {
+  background: $base-color;
+  height: 120px;
+  display: flex;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  z-index: 20;
+}
+
+.icons {
+  color: $white;
+  flex: 1;
+  font-size: 15px;
+  margin-top: 10px;
+  padding-top: 10px;
+  text-align: center;
+  width: 30px;
+}
+
+.icons span {
+  font-size: 12px;
+  padding-left: 4px;
+}
+
+img.info {
+  filter: invert(100%) sepia(13%) saturate(7500%) hue-rotate(197deg) brightness(116%) contrast(116%);
+}
+
+.desc-container {
+  position: absolute;
+  top: 75%;
+  z-index: 25;
+}
+
+.about-us,
+.howitworks {
+  background: $white;
+  padding-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.hiw-content {
+  background: $base-color;
+  padding: 20px;
+    
+}
+
+.hiw-card-content.card {
+  background: $base-color;
+}
+
+.hiw .hiw-card {
+  border: none;
+}
+
+.hiw-card .card-body {
+  color: $white;
+}
+
+.hiw-card .card-body .card-title {
+  text-align: center;
+}
+
+.hiw-card .card-body .card-title h1 {
+  font-size: 40px;
+  text-align: left;
+}
+
+.hiw .hiw-card-img,
+.hiw .test-card-img {
+  border-radius: 0;
+  height: 200px;
+}
+
+.hiw-card .hiw-button {
+  background: $base-color;
+  border: 1px solid $white;
+  width: 50%;
+}
+
+.hiw-card .hiw-button:hover {
+  background: $base-color;
+  border: 2px solid $white;
+}
+
+.about-us p.card-text,
+.howitworks p.card-text {
+  margin-bottom: 4rem;
+}
+
+.slide-container .hwu {
+  color: $white;
+  filter: contrast(200%);
+  left: 15%;
+  position: absolute;
+  top: 25%;
+  width: 70%;
+}
+
+.hwu h2 {
+  font-size: 20px;
+  width: 60%;
+}
+
+a .absolute-button {
+  position: absolute;
+  left: 45%;
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+  top:50%;
+  z-index: 35;
+  background: $base-color;
+  border: none;
+}
+
+.card-body-content.card-body {
+  padding: 15px;
+}
+
+a .absolute-button:hover {
+  background: $base-color;
+  border: 1px solid $white;
+}
+
+.slide-container,
+.t-slide {
+  list-style: none;
+  position: relative;
+  z-index: 0;
+}
+
+.t-slide li {
+  animation: imageAnimation 40s linear infinite;
+  background: $white;
+  position: absolute;
+  left: 20%;
+  opacity: 0;
+  width: 60%;
+  z-index: 0;
+}
+
+.slide-container li {
+  animation: imageAnimation 40s linear infinite;
+  background: $black;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+// Biz slide
+.slide-container li:nth-child(1) {
+  animation-delay: 15s;
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing1.jpg")
+}
+
+.slide-container li:nth-child(2) {
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing2.jpg");
+}
+
+.slide-container li:nth-child(3) {
+  animation-delay: 30s;
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing3.jpg");
+}
+// testimonial slide
+.t-slide li:nth-child(2) {
+  animation-delay: 15s;
+}
+
+.t-slide li:nth-child(3) {
+  animation-delay: 30s;
+}
+
+@keyframes imageAnimation {
+  0% { 
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+
+  20% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+}
+
+.footer-wrapper {
+  bottom: -165%;
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.landing-container button.l-bttn-style {
+  width: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us,
+  .howitworks,
+  .testimonial {
+    display: flex;
+  }
+
+  .hiw {
+    flex: 1;
+  }
+
+  .icons-holder {
+    height: 300px;
+    top: 92%;
+  }
+
+  .hiw-card .card-body {
+    padding: 0; 
+  }
+
+  .about-us,
+  .howitworks,
+  .testimonial {
+    background: $white;
+    left: 10%;
+    position: relative;
+    width: 80%;
+  }
+
+  .testimonial {
+    margin: 20px;
+  }
+
+  .about-us,
+  .howitworks {
+    padding: 40px;
+  }
+
+  .hiw .test-card-img {
+    border-radius: 50%;
+    height: 250px;
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .hiw .hiw-card-img {
+    border-radius: 0;
+    height: 324px;
+  }
+
+  .hwu {
+    top: 25%;
+    width: 40%;
+  }
+
+  a .absolute-button {
+    top:55%;
+  }
+  .desc-container {
+    top: 105%;
+  }
+
+  .icons {
+    font-size: 40px;
+    padding: 0;
+  }
+  img.info {
+    padding: 10px;
+
+  }
+
+  .icons span {
+    font-size: 18px;
+  }
+
+  .hwu h2 {
+    font-size: 40px;
+  }
+
+  .hwu h4 {
+    font-size: 25px;
+  }
+    
+}
