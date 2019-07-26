@@ -1,0 +1,26 @@
+$input-color: #f2994a;
+$feedback: #ff0000;
+$border: #707070;
+
+.input {
+  border: 0.5px solid $border;
+  border-radius: 5px;
+  margin: auto;
+  padding: 0.6rem;
+  width: 100%;
+}
+
+.input:active,
+.input:focus,
+.input:focus-within {
+  border: 0.5px solid $input-color;
+  outline-color: $input-color;
+}
+
+.form-control {
+  width: 90%;
+}
+
+::-webkit-input-placeholder {
+  font-size: 12px;
+}

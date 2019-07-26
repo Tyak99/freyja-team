@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 
 export const loading = () => ({
@@ -25,7 +24,6 @@ export const ResetPassword = user => async (dispatch) => {
       headers: {
         accept: 'application/json',
         'Content-type': 'application/json; charset=UTF-8',
-
       },
     });
 

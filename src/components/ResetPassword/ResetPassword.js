@@ -1,17 +1,17 @@
-
 import React, { Component } from 'react';
-import {
-  CardText, CardBody, CardTitle, CardSubtitle, FormGroup,
-} from 'reactstrap';
+import { CardText, CardBody, CardSubtitle, FormGroup } from 'reactstrap';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
-import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
-import Card from '../Card/card';
+import * as actions from '../../../store/actions/authActions/resetPassword';
+import Card from '../Card/Card';
 import Button from '../Button';
-import Input from '../inputs/input';
+import Input from '../Inputs/Input';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
+import { Heading } from '../Heading/Heading';
+
 /**
  * @description
  * @param
@@ -28,66 +28,59 @@ export class ResetPasswordCard extends Component {
     };
   }
 
-
   handleEmail(e) {
     const { value } = e.target;
     this.setState({ email: value });
   }
 
   handleSubmit() {
-    const { history } = this.props;
+    const { ResetPassword, history } = this.props;
     const { email } = this.state;
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.ResetPassword(email, history);
+    ResetPassword(email, history);
   }
 
   render() {
     const { passwordResetSuccess, passwordResetError, loading } = this.props;
     return (
-      <div className="containers">
-        <div className="bg-image" />
+      <div>
         <Header />
-        <Card>
-          <CardBody>
-            <CardSubtitle>
-              <i className="fas fa-lock" />
-            </CardSubtitle>
-            <CardTitle className="forgot"> Forgot Password? </CardTitle>
-            <CardText>
-             Please enter your email address here and we will send you information to change your
-             password
-            </CardText>
-            <div className="success">{passwordResetSuccess}</div>
-            <FormGroup>
-              <Input
-                placeholder="Email"
-                id="email"
-                onChange={e => this.handleEmail(e)}
+        <div className="containers">
+          <div className="bg-image" />
+          <Card>
+            <CardBody>
+              <CardSubtitle>
+                <FontAwesomeIcon icon="lock" className="FontAwesomeIcon" />
+              </CardSubtitle>
+              <Heading title="Forgot Password?" />
+              <CardText>Please enter your email to reset your password</CardText>
+              <div className="success">{passwordResetSuccess}</div>
+              <FormGroup>
+                <Input placeholder="Email" id="email" onChange={e => this.handleEmail(e)} />
+                <div className="error">{passwordResetError}</div>
+              </FormGroup>
+              <Button
+                classname="buttons"
+                type="button"
+                onClick={e => this.handleSubmit(e)}
+                text={loading === true ? 'Loading...' : 'Reset Password'}
               />
-              <div className="error">{passwordResetError}</div>
-            </FormGroup>
-            <Button
-              classname="buttons"
-              type="button"
-              onClick={e => this.handleSubmit(e)}
-              text={loading === true ? 'Loading...' : 'Reset Password'}
-            />
-          </CardBody>
-        </Card>
-        <Footer />
+            </CardBody>
+          </Card>
+          <Footer />
+        </div>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = {
-  ResetPassword,
+  ResetPassword: actions.ResetPassword,
 };
 
 const mapStateToProps = state => ({
   passwordResetError: state.auth.passwordResetError,
   passwordResetSuccess: state.auth.passwordResetSuccess,
-  loading: state.auth.isloading,
+  loading: state.auth.isLoading,
 });
 
 ResetPasswordCard.propTypes = {

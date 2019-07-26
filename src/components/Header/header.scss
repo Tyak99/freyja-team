@@ -2,6 +2,11 @@ $white: #ffffff;
 $primary: #5f3518;
 $primary-hover: #775945;
 
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
 .nav-style {
   background: $primary;
   color: $white;
@@ -9,7 +14,7 @@ $primary-hover: #775945;
   .nav-brand {
     color: $white;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1em;
     margin-right: 1rem;
     padding-bottom: 0.3125rem;
     padding-top: 0.3125rem;
