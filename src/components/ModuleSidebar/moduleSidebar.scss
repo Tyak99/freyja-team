@@ -1,0 +1,54 @@
+$sidebar-links-color: #8f5806;
+$dark-brown-color: #523304;
+
+.m-aside {
+  margin-top: 41px;
+  background: #f8f8f8;
+  border: solid #f8f8f8 1px;
+}
+
+.d-aside{
+  padding-top: 2rem;
+  min-height: 100vh;
+}
+
+ .d-sidebar aside {
+  padding: 10px;
+}
+
+.d-links li.module-active {
+  background: $dark-brown-color;
+  &:hover {
+    border: 0;
+  }
+}
+
+.d-links li.module-active a {
+  color: #fff;
+}
+.d-links li a {
+  text-decoration: none;
+  color: $dark-brown-color;
+}
+
+ul.d-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.d-links li, span.d-logo {
+  cursor: pointer;
+  margin: 4rem 1rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.d-links li:hover {
+  border: 2px solid $sidebar-links-color;
+  border-radius: 2px;
+}
+
+a.m-card-link {
+  color: #000;
+}

@@ -1,0 +1,50 @@
+$primary: #5f3518;
+$white: #fff;
+
+.v-container {
+  color: #444;
+  line-height: 1.5;
+  padding: 0 100px;
+
+  .v-sidebar {
+    margin: auto;
+    margin-top: 10;
+    padding: 0px 8px;
+    height: auto;
+  }
+
+  .m-row {
+    min-height : 100%;
+  }
+
+  .module-main {
+    padding: 100px 50px 50px;
+    min-height: 100vh;
+  }
+  .loader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .module-content {
+    margin-top: 50px;
+
+    .content-header {
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .test-button {
+    width: 160px;
+    background: $white;
+    border: solid 2px $primary;
+    color: $primary;
+    margin-top: 50px;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+}
