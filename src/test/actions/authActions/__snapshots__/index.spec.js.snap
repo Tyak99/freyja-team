@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`async actions creates CHANGE_PASSWORD_ERROR when change password action is not successful 1`] = `
+Array [
+  Object {
+    "payload": "sorry, check the link again",
+    "type": "PASSWORD_CHANGE_ERROR",
+  },
+]
+`;
+
+exports[`async actions creates CHANGE_PASSWORD_SUCCESS when change password action is successful 1`] = `
+Array [
+  Object {
+    "payload": "password successfully update",
+    "type": "PASSWORD_CHANGE_SUCCESS",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_CHANGE_SUCCESS when 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "payload": "please send reset password request again",
+    "type": "PASSWORD_CHANGE_ERROR",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_RESET_ERROR 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "payload": undefined,
+    "type": "PASSWORD_RESET_ERROR",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_RESET_ERROR when reset password action is not successful 1`] = `
+Array [
+  Object {
+    "payload": "invalid Email",
+    "type": "PASSWORD_RESET_ERROR",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_RESET_SUCCESS 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "payload": "Please check your email",
+    "type": "PASSWORD_RESET_SUCCESS",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_RESET_SUCCESS when reset password action is successful 1`] = `
+Array [
+  Object {
+    "payload": "Please check your email",
+    "type": "PASSWORD_RESET_SUCCESS",
+  },
+]
+`;
+
+exports[`async actions update verified state 1`] = `
+Array [
+  Object {
+    "isVerified": true,
+    "type": "VERIFY_USER",
+  },
+]
+`;
+
+exports[`async actions updates loading to true in state 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+]
+`;
+
+exports[`async actions verifies user 1`] = `
+Array [
+  Object {
+    "isVerified": "Couldn't verify you, Please chcek the link sent to your email again.",
+    "type": "VERIFY_USER",
+  },
+]
+`;

@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`action creators calls PROFILE_SUCCESS when getProfile is successful 1`] = `
+Array [
+  Object {
+    "data": Object {
+      "data": Object {
+        "dateOfBirth": "12/12/12",
+        "id": 1,
+        "image": "http://",
+        "industry": "Andela",
+        "isCertified": false,
+        "isEmployed": true,
+        "phoneNumber": 3223232,
+        "yrsOfExperience": 4,
+      },
+    },
+    "type": "GET_PROFILE_SUCCESS",
+  },
+]
+`;
+
+exports[`async actions should create getProfileSuccess when profile has been gotten 1`] = `
+Array [
+  Object {
+    "data": Object {
+      "DOB": null,
+      "bio": "Help me",
+      "email": undefined,
+      "image": undefined,
+      "industry": undefined,
+      "isEnrolled": undefined,
+      "name": "John Grisham",
+      "phoneNumber": 7689567890,
+      "socialMedia": Array [
+        Object {
+          "name": "facebook",
+          "url": undefined,
+        },
+        Object {
+          "name": "twitter",
+          "url": undefined,
+        },
+        Object {
+          "name": "linkedin",
+          "url": undefined,
+        },
+      ],
+      "username": "Tyak",
+      "yrsOfExperience": undefined,
+    },
+    "type": "GET_PROFILE_SUCCESS",
+  },
+]
+`;
+
+exports[`async actions should dispatch getProfileFailed when getProfile fails 1`] = `
+Array [
+  Object {
+    "error": [Error: Nock: No match for request {
+  "method": "GET",
+  "url": "https://freyja-ah-backend.herokuapp.com/api/profiles/4",
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": {},
+    "user-agent": "axios/0.19.0"
+  }
+}],
+    "type": "GET_PROFILE_FAILED",
+  },
+]
+`;
+
+exports[`async actions should dispatch update profile failed 1`] = `
+Array [
+  Object {
+    "error": "invalid date of birth",
+    "type": "UPDATE_PROFILE_FAILED",
+  },
+]
+`;
+
+exports[`async actions should dispatch updateProfile 1`] = `
+Array [
+  Object {
+    "error": [Error: Nock: No match for request {
+  "method": "GET",
+  "url": "https://freyja-ah-backend.herokuapp.com/api/profiles/45",
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "authorization": {},
+    "user-agent": "axios/0.19.0"
+  }
+}],
+    "type": "GET_PROFILE_FAILED",
+  },
+]
+`;
+
+exports[`profile actions dispatch UPLOAD_FAILED with error object 1`] = `
+Array [
+  Object {
+    "imageUrl": "http//",
+    "type": "UPLOAD_SUCCESS",
+  },
+  Object {
+    "error": Object {
+      "error": "unable to upload image",
+    },
+    "type": "UPLOAD_FAILED",
+  },
+]
+`;
+
+exports[`profile actions dispatch UPLOAD_SUCCESS with image url 1`] = `
+Array [
+  Object {
+    "imageUrl": "http//",
+    "type": "UPLOAD_SUCCESS",
+  },
+]
+`;
+
+exports[`profile actions dispatch updateProfileFailed with error object 1`] = `
+Array [
+  Object {
+    "imageUrl": "http//",
+    "type": "UPLOAD_SUCCESS",
+  },
+  Object {
+    "error": Object {
+      "error": "unable to upload image",
+    },
+    "type": "UPLOAD_FAILED",
+  },
+  Object {
+    "error": Object {
+      "error": "invalie information",
+    },
+    "type": "UPDATE_PROFILE_FAILED",
+  },
+]
+`;
+
+exports[`profile reducer should test the initial state 1`] = `
+Object {
+  "data": Object {},
+  "error": null,
+  "isLoading": false,
+}
+`;
+
+exports[`profile reducer should test the state for update when get profile fails 1`] = `
+Object {
+  "data": Object {},
+  "error": undefined,
+  "isLoading": false,
+}
+`;
+
+exports[`profile reducer should test the state for update when get profile success 1`] = `
+Object {
+  "data": undefined,
+  "error": null,
+  "isLoading": false,
+}
+`;
+
+exports[`profile reducer should test the state for update when upload image failed 1`] = `
+Object {
+  "data": Object {},
+  "error": undefined,
+  "isLoading": false,
+}
+`;
+
+exports[`profile reducer should test the state for update when upload image failed 2`] = `
+Object {
+  "data": Object {},
+  "error": null,
+  "isLoading": true,
+}
+`;
+
+exports[`profile reducer should test the state for update when upload image success 1`] = `
+Object {
+  "data": Object {
+    "image": undefined,
+  },
+  "error": null,
+  "isLoading": false,
+}
+`;

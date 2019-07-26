@@ -5,7 +5,8 @@ module.exports = merge(common, {
   mode: 'development',
   devServer: {
     host: 'localhost',
-    port: 3000,
+    // TODO: Change this back to 3000
+    port: 3001,
     open: true,
     historyApiFallback: true,
   },

@@ -1,0 +1,67 @@
+$sidebar-links-color: #8f5806;
+
+.d-container {
+  width: 100%;
+}
+
+.m-main{
+  margin-top:20px;
+}
+
+div .d-row {
+    margin-left: 2%;
+}
+div.s-row {
+  margin-right: 0;
+}
+.d-aside{
+  padding-top: 2rem;
+}
+.d-row .row {
+  padding-left: 4rem;
+}
+
+ .d-sidebar aside {
+  height: 100%;
+  padding: 10px;
+}
+
+.d-links li.module-active {
+  background: #523304;
+  &:hover {
+    border: 0;
+  }
+}
+
+.d-links li.module-active a {
+  color: #fff;
+}
+.d-links li a {
+  text-decoration: none;
+  color: #523304;
+}
+
+.footer-div.d-footer {
+  position: unset;
+}
+ul.d-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.d-links li, span.d-logo {
+  cursor: pointer;
+  margin: 4rem 1rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.d-links li:hover {
+  border: 2px solid $sidebar-links-color;
+  border-radius: 2px;
+}
+
+a.m-card-link {
+  color: #000;
+}

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`moduleAction should get all modules 1`] = `
+Array [
+  Object {
+    "payload": undefined,
+    "type": "GET_ALL_MODULES",
+  },
+]
+`;
