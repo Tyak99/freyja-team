@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reset password reducer should handle GET_COMMUNITY_MESSAGES_ERROR 1`] = `
+Object {
+  "allMessages": Object {},
+  "error": undefined,
+  "isLoading": false,
+}
+`;
+
+exports[`reset password reducer should handle LOADING 1`] = `
+Object {
+  "allMessages": Array [],
+  "error": null,
+  "isLoading": true,
+}
+`;
+
+exports[`reset password reducer should handleGET_COMMUNITY_MESSAGES 1`] = `
+Object {
+  "allMessages": undefined,
+  "error": null,
+  "isLoading": false,
+}
+`;
+
+exports[`reset password reducer should return the initial state 1`] = `
+Object {
+  "allMessages": Array [],
+  "error": null,
+  "isLoading": false,
+}
+`;

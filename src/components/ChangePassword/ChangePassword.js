@@ -14,7 +14,6 @@ import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { Heading } from '../Heading/Heading';
 
-
 export class ChangePassword extends Component {
   constructor(props) {
     super(props);
@@ -65,56 +64,58 @@ export class ChangePassword extends Component {
   }
 
   render() {
-    const { error, confirmPassword, password,
-      passwordFieldError, confirmPasswordFieldError, success } = this.state;
+    const { error, confirmPassword, password, passwordFieldError,
+      confirmPasswordFieldError, success } = this.state;
 
     const { loading } = this.props;
     return (
-      <div className="containers">
-        <div className="bg-image" />
+      <div>
         <Header />
-        <Card>
-          <CardBody>
-            <CardSubtitle>
-              <FontAwesomeIcon icon="lock" className="FontAwesomeIcon" />
-            </CardSubtitle>
-            <Heading title="Change Password" />
-            <CardText>Enter a new password to change your password</CardText>
-            <div className="error">{error}</div>
-            <div className="success">{success}</div>
-            <FormGroup>
-              <Input
-                placeholder="Password"
-                className="input"
-                id="password"
-                onChange={e => this.handleInput(e)}
-                name="password"
-                value={password}
-                type="password"
+        <div className="containers">
+          <div className="bg-image" />
+          <Card>
+            <CardBody>
+              <CardSubtitle>
+                <FontAwesomeIcon icon="lock" className="FontAwesomeIcon" />
+              </CardSubtitle>
+              <Heading title="Change Password" />
+              <CardText>Enter a new password to change your password</CardText>
+              <div className="error">{error}</div>
+              <div className="success">{success}</div>
+              <FormGroup>
+                <Input
+                  placeholder="Password"
+                  className="input"
+                  id="password"
+                  onChange={e => this.handleInput(e)}
+                  name="password"
+                  value={password}
+                  type="password"
+                />
+                <div className="error">{passwordFieldError}</div>
+              </FormGroup>
+              <FormGroup>
+                <Input
+                  placeholder="Confirm Password"
+                  className="input"
+                  id="password2"
+                  onChange={e => this.handleInput(e)}
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  type="password"
+                />
+                <div className="error">{confirmPasswordFieldError}</div>
+              </FormGroup>
+              <Button
+                classname="buttons"
+                type="button"
+                onClick={this.handleSubmit}
+                text={loading ? 'Loading...' : 'Change Password'}
               />
-              <div className="error">{passwordFieldError}</div>
-            </FormGroup>
-            <FormGroup>
-              <Input
-                placeholder="Confirm Password"
-                className="input"
-                id="password2"
-                onChange={e => this.handleInput(e)}
-                name="confirmPassword"
-                value={confirmPassword}
-                type="password"
-              />
-              <div className="error">{confirmPasswordFieldError}</div>
-            </FormGroup>
-            <Button
-              classname="buttons"
-              type="button"
-              onClick={this.handleSubmit}
-              text={loading ? 'Loading...' : 'Change Password'}
-            />
-          </CardBody>
-        </Card>
-        <Footer />
+            </CardBody>
+          </Card>
+          <Footer />
+        </div>
       </div>
     );
   }

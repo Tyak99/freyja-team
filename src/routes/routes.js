@@ -10,6 +10,7 @@ import signUpPage from '../views/Signup/SignUp';
 import ResetPassword from '../views/ResetPassword/ResetPassword';
 import changePassword from '../views/ChangePassword/changePassword';
 import VerifyUserPage from '../views/VerifyUser/verifyUser';
+import CommunityPage from '../views/Community/CommunityPage';
 import About from '../views/AboutUs/AboutUs';
 
 const Routes = () => (
@@ -23,6 +24,7 @@ const Routes = () => (
     <Route path="/change-password" component={changePassword} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/verify" component={VerifyUserPage} />
+    <Route path="/community" component={CommunityPage} />
     <Route path="/view-module/:moduleId" component={ViewModule} />
     <Route component={NotFound} />
   </Switch>

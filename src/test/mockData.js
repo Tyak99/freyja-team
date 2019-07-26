@@ -13,4 +13,9 @@ export default {
     errors: {},
     modules: [],
   },
+  community: {
+    error: null,
+    allMessages: {},
+    isLoading: false,
+  },
 };

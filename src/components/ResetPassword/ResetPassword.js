@@ -42,32 +42,32 @@ export class ResetPasswordCard extends Component {
   render() {
     const { passwordResetSuccess, passwordResetError, loading } = this.props;
     return (
-      <div className="containers">
-        <div className="bg-image" />
+      <div>
         <Header />
-        <Card>
-          <CardBody>
-            <CardSubtitle>
-              <FontAwesomeIcon icon="lock" className="FontAwesomeIcon" />
-            </CardSubtitle>
-            <Heading title="Forgot Password?" />
-            <CardText>
-              Please enter your email to reset your password
-            </CardText>
-            <div className="success">{passwordResetSuccess}</div>
-            <FormGroup>
-              <Input placeholder="Email" id="email" onChange={e => this.handleEmail(e)} />
-              <div className="error">{passwordResetError}</div>
-            </FormGroup>
-            <Button
-              classname="buttons"
-              type="button"
-              onClick={e => this.handleSubmit(e)}
-              text={loading === true ? 'Loading...' : 'Reset Password'}
-            />
-          </CardBody>
-        </Card>
-        <Footer />
+        <div className="containers">
+          <div className="bg-image" />
+          <Card>
+            <CardBody>
+              <CardSubtitle>
+                <FontAwesomeIcon icon="lock" className="FontAwesomeIcon" />
+              </CardSubtitle>
+              <Heading title="Forgot Password?" />
+              <CardText>Please enter your email to reset your password</CardText>
+              <div className="success">{passwordResetSuccess}</div>
+              <FormGroup>
+                <Input placeholder="Email" id="email" onChange={e => this.handleEmail(e)} />
+                <div className="error">{passwordResetError}</div>
+              </FormGroup>
+              <Button
+                classname="buttons"
+                type="button"
+                onClick={e => this.handleSubmit(e)}
+                text={loading === true ? 'Loading...' : 'Reset Password'}
+              />
+            </CardBody>
+          </Card>
+          <Footer />
+        </div>
       </div>
     );
   }
@@ -90,7 +90,4 @@ ResetPasswordCard.propTypes = {
   passwordResetError: propTypes.string,
   passwordResetSuccess: propTypes.string,
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ResetPasswordCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordCard);

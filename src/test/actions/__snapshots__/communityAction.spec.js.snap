@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test community action return error while trying to get community messages 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "data": "internal error",
+    "type": "GET_COMMUNITY_MESSAGES_ERROR",
+  },
+]
+`;
+
+exports[`test community action successfully get all community messages 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "data": undefined,
+    "type": "GET_COMMUNITY_MESSAGES",
+  },
+]
+`;
