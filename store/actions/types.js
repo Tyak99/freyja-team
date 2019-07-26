@@ -1,2 +1,16 @@
 export const GET_ERRORS = 'GET_ERRORS';
+
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+
+export const INIT_AUTH_REQUEST = 'INIT_AUTH_REQUEST';
+
+export const END_AUTH_REQUEST = 'END_AUTH_REQUEST';
+
+export const SIGNUP_ERROR = 'SIGNUP_ERROR';
+
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+
+export const GET_ALL_MODULES = 'GET_ALL_MODULES';
+
+export const MODULES_ERROR = 'MODULES_ERROR';
+export const VERIFY_USER = 'VERIFY_USER';

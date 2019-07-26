@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
@@ -11,10 +10,7 @@ if (process.env.NODE_ENV === 'development') {
   enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 }
 
-const composedEnhancers = compose(
-  applyMiddleware(...middlewares),
-  ...enhancers,
-);
-const store = createStore(rootReducer, composedEnhancers);
+const composedEnhancers = compose(applyMiddleware(...middlewares), ...enhancers);
+const store = createStore(rootReducer, {}, composedEnhancers);
 
 export default store;

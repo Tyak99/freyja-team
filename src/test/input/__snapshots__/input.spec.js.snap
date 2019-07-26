@@ -2,16 +2,11 @@
 
 exports[`InputField component should render without errors 1`] = `
 <Fragment>
-  <FormGroup
-    className="inf"
-    tag="div"
-  >
-    <Input
-      className="input firstname is-invalid"
-      name="lastName"
-      placeholder="Last name"
-      type="text"
-    />
-  </FormGroup>
+  <input
+    className="input"
+    name="lastName"
+    placeholder="Last name"
+    type="text"
+  />
 </Fragment>
 `;

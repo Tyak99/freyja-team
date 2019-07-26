@@ -5,13 +5,15 @@ import { Card, CardBody } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/images/logo3.png';
-import { Heading } from '../../components/heading/heading';
+import { Heading } from '../../components/Heading/Heading';
 import Navbar from '../../components/Header/Header';
-import Input from '../../components/inputs/input';
+import Input from '../../components/Inputs/Input';
 import Button from '../../components/Button/index';
-import './SignUp.scss';
+import './signUp.scss';
 
-const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
+const SignUpForm = ({
+  onSubmit, onChange, authError, valError,
+}) => (
   <Fragment>
     <section className="sec-signup">
       <Navbar className="navbar" />
@@ -72,22 +74,18 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
                 name="confirmPassword"
                 onChange={onChange}
               />
-              {' '}
               {valError && <div className="feedback">{valError.confirmPassword}</div>}
             </div>
             <Button text="Sign up" />
           </form>
           <div className="btm">
             <Link to="/signup" className="acct">
-              {' '}
               Already have an account
-              {' '}
             </Link>
             <br />
 
-            <Link to="/module" className="soc-media">
+            <Link to="/dashboard" className="soc-media">
               Register with Social media
-              {' '}
             </Link>
             <br />
             <div>
@@ -111,7 +109,15 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
 SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  valError: PropTypes.object,
+  valError: PropTypes.shape({
+    status: PropTypes.number,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    userName: PropTypes.string,
+    email: PropTypes.string,
+    password: PropTypes.string,
+    confirmPassword: PropTypes.string,
+  }),
   authError: PropTypes.string,
 };
 export default SignUpForm;
