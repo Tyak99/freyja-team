@@ -1,0 +1,82 @@
+$border: #707070;
+$input-color: #f2994a;
+$error-color: #8a0f0f;
+
+
+.jumbotron {
+  top: 260px;
+  padding: 14px;
+  margin-top: 40px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.details {
+  margin-left: 20px;
+
+  textarea {
+    border: 0.5px solid $border;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0.6rem;
+
+    &:active,
+    &:focus,
+    &:focus-within {
+    border: 0.5px solid $input-color;
+    outline-color: $input-color;
+    }
+  }
+
+  h4 {
+    width: 50%;
+    float: left;
+    font-weight: 500;
+    font-size: 18px;
+    color: #6d6666;
+  }
+
+  svg {
+    &:hover {
+      color: grey;
+      cursor: pointer;
+    }
+    font-size: 31px;
+    margin-bottom: 10px;
+  }
+
+  .error {
+    color: $error-color;
+    display: inline-block;
+    font-size: 17px;
+    padding-top: 8px;
+  }
+}
+
+.edit-input {
+  width: 80%;
+}
+
+.btn-update {
+  color: white;
+  background-color: #5f3518;
+  width: 58%;
+
+  &:hover {
+    background-color: #b1754b
+  }
+}
+.btn-cancel {
+  color: white;
+  background-color: #F2994A;
+  width: 58%;
+
+  &:hover {
+    background-color: #e2b892
+  }
+}
+
+.userDetailsRow {
+  margin-bottom: 40px;
+}

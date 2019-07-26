@@ -1,11 +1,8 @@
-$base-color: #ffffff;
-
+$base-color: #fff;
 .card {
   background: $base-color;
   border-radius: 5px;
-  height: 400px;
   margin: auto;
-  width: 400px;
   z-index: 1000;
 
   @media screen and (max-width: 420px) {

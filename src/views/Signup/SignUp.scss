@@ -3,11 +3,11 @@ $browncolor: #5f3518;
 $linkcolor: #6d6666;
 $signcolor: #fff;
 $red: #ff0000;
-$htmlcolor: #6d6666;
+$basecolor: #6d6666;
 $backgroundcolor:rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7);
 
 html {
-  color: $htmlcolor;
+  color: $basecolor;
 }
 
 .sec-signup {
@@ -97,13 +97,6 @@ html {
 .feedbackk {
   margin-bottom: 2%;
   text-align: center;
-}
-
-.headsi {
-  color: $htmlcolor;
-  font-size: 18px;
-  margin-bottom: 3%;
-  margin-top: 2%;
 }
 
 .btm {

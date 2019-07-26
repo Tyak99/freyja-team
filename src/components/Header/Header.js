@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import {
+  Collapse, Navbar, NavbarToggler, Nav, NavItem,
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './header.scss';
 import Button from '../Button';
+import logo from '../../assets/images/logo.png';
 
 export class Header extends React.Component {
   constructor(props) {
@@ -53,7 +56,8 @@ export class Header extends React.Component {
         <Navbar className="nav-style" light expand="md">
           <div>
             <Link to="/" className="nav-brand">
-              Communitee
+              <img src={logo} alt="logo" />
+              CSLC
             </Link>
           </div>
           <NavbarToggler onClick={this.toggle} />

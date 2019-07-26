@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authAction should decode user token when registerUser is successful 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "email": "princess@gmail.com",
+      "exp": 1563133457,
+      "iat": 1562528657,
+      "userId": 24,
+      "userName": "gr",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+]
+`;
+
+exports[`authAction should decode user token when registerUser is successful 2`] = `
+Array [
+  Object {
+    "errors": "This username is already in use",
+    "type": "GET_ERRORS",
+  },
+]
+`;

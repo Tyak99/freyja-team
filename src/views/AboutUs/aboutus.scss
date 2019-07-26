@@ -1,0 +1,141 @@
+$bgcolor: #fff;
+$fontcolor: #676666;
+$headingcolor: #6d6666;
+$altbgcolor: #f4f4f4;
+$bordercolor: #f2994a;
+
+.wrapper {
+  color: $fontcolor;
+  font-size: 14px;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+
+  .container-A {
+    margin: auto;
+    padding: 0 15px;
+    width: 1200px;
+  }
+
+  section {
+    margin: 0;
+    padding-bottom: 8%;
+    padding-top: 5%;
+    width: 100%;
+  }
+
+  .abt-h {
+    color: $headingcolor;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nbg-t,
+  .sect-wrks {
+    background-color: $altbgcolor;
+  }
+
+  .spe {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .textg {
+    justify-content: flex-end;
+    margin: 0;
+    margin-bottom: 50px;
+
+    .boxxx {
+      width: 10%;
+    }
+
+    .nummm {
+      border: 2px solid $bordercolor;
+      border-radius: 50%;
+      color: $bordercolor;
+      display: inline-block;
+      font-size: 25px;
+      height: 54px;
+      margin-right: 25px;
+      padding: 5px;
+      text-align: center;
+      width: 54px;
+    }
+
+    .numw {
+      width: 10%;
+    }
+
+    .tesx {
+      width: 90%;
+    }
+  }
+
+  .tutors {
+    border: none;
+    padding: 6%;
+    padding-top: 0;
+    width: 33.333%;
+
+    .circ1,
+    .circ3,
+    .circ {
+      border-radius: 50%;
+      background-image: url('../../assets/images/2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      margin-bottom: 10%;
+      width: 250px;
+    }
+
+    .circ1 {
+      background-image: url('../../assets/images/6.jpg');
+    }
+
+    .circ3 {
+      background-image: url('../../assets/images/9.jpg');
+      background-position: center;
+    }
+
+    .handlesd,
+    .nam {
+      text-align: center;
+      .fci {
+        color: $headingcolor;
+        &:hover {
+          color: $bordercolor;
+        }
+      }
+    }
+
+    .icii {
+      padding: 0 5%;
+    }
+  }
+
+  .textar,
+  .inp {
+    margin: auto;
+    width: 50%;
+  }
+  .psub:active,
+  .psub:focus,
+  .psub {
+    background-color: $bordercolor;
+    border: none;
+  }
+  .form-hw {
+    text-align: center;
+  }
+  #psub {
+    text-align: center;
+  }
+}
