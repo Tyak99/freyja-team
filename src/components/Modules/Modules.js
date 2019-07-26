@@ -25,7 +25,7 @@ const Modules = ({ modules }) => (
 
           <Card className="m-g-card">
             <Fragment>
-              <Link to={`/modules/${mod.id}`} className="m-card-link">
+              <Link to={`/view-module/${mod.id}`} className="m-card-link">
                 <CardBody className="m-c-title">
                   <CardTitle className="m-title">
                     {mod.id}
@@ -42,7 +42,7 @@ const Modules = ({ modules }) => (
 
               <CardBody className="t-link">
                 <CardText>
-                  <Link to={`/modules/${mod.id}`}>View more </Link>
+                  <Link to={`/view-module/${mod.id}`}>View more </Link>
                 </CardText>
               </CardBody>
             </Fragment>

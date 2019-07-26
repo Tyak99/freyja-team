@@ -1,0 +1,21 @@
+.content-item {
+  margin: 0px 0px 25px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+
+  &:hover {
+    border: solid #f3994a 2px;
+  }
+  a {
+    text-decoration: none;
+    color: #f3994a;
+    font-size: 18px;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
