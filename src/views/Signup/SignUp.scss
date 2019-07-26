@@ -1,0 +1,136 @@
+$orangecolor: #f2994a;
+$browncolor: #5f3518;
+$linkcolor: #6d6666;
+$signcolor: #fff;
+$red: #ff0000;
+$htmlcolor: #6d6666;
+$backgroundcolor:rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7);
+
+html {
+  color: $htmlcolor;
+}
+
+.sec-signup {
+  background-image: linear-gradient($backgroundcolor),
+    url('../../assets/images/signupbg.jpg');
+  background-size: cover;
+  margin: auto;
+  width: 100%;
+}
+
+.container-s {
+  margin: auto;
+  padding: 0 15px;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  width: 1200px;
+
+  a {
+    color: inherit;
+  }
+}
+
+.signup-box {
+  background: $signcolor;
+  border-radius: 5px;
+  margin: auto;
+  padding-top: 2%;
+  text-align: center;
+  width: 400px;
+  z-index: 1000;
+
+  @media screen and (max-width: 420px) {
+    width: 300px;
+  }
+}
+
+.font {
+  width: 30%;
+}
+
+.boxx-tex {
+  margin-bottom: 3%;
+}
+
+.inf {
+  margin-bottom: 1.5rem;
+}
+
+.sign-form .b-button,
+.input {
+  margin: auto;
+}
+
+.sign-form .b-button {
+  background-color: $orangecolor;
+  border: 0.5px solid $orangecolor;
+  padding: 3.5%;
+}
+
+.sign-form .b-button:hover,
+.sign-form .b-button:active,
+.sign-form .b-button:focus {
+  background-color: $orangecolor;
+  border: 0.5px solid $orangecolor;
+}
+
+.sign-form .b-button:hover {
+  opacity: 0.6;
+}
+
+.logo {
+  margin-top: 2%;
+}
+
+.feedbackk,
+.feedback {
+  color: $red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding-bottom: 0;
+  padding-left: 0.4rem;
+  padding-right: 0;
+  padding-top: 0.3rem;
+  text-align: left;
+}
+
+.feedbackk {
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.headsi {
+  color: $htmlcolor;
+  font-size: 18px;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+.btm {
+  a:hover {
+    color: $orangecolor;
+    text-decoration: none;
+  }
+
+  a {
+    color: $linkcolor;
+    font-weight: normal;
+  }
+
+  .mid {
+    padding: 0 3%;
+  }
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.acct,
+.soc-media {
+  color: $linkcolor;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 5%;
+  margin-top: 0.8%;
+}
