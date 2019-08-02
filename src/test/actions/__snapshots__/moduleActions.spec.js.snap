@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`moduleAction should get a single module 1`] = `
+Array [
+  Object {
+    "type": "INIT_MODULE_REQUEST",
+  },
+  Object {
+    "payload": [Error: Nock: No match for request {
+  "method": "GET",
+  "url": "https://freyja-ah-backend.herokuapp.com/api//modules/1",
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.19.0"
+  }
+}],
+    "type": "MODULES_ERROR",
+  },
+]
+`;
+
 exports[`moduleAction should get all modules 1`] = `
 Array [
   Object {

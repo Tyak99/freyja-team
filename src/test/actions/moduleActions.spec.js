@@ -2,8 +2,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import 'regenerator-runtime';
-import { getModules } from '../../../store/actions/moduleActions';
+import { getModules, getModule } from '../../../store/actions/moduleActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -15,7 +14,6 @@ describe('moduleAction', () => {
     store = mockStore({});
   });
   afterEach(() => {
-    // clear all HTTP mocks after each test
     nock.cleanAll();
   });
 
@@ -26,6 +24,18 @@ describe('moduleAction', () => {
         module: [],
       });
     await store.dispatch(getModules()).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+      done();
+    });
+  });
+
+  it('should get a single module', async done => {
+    nock('https://freyja-ah-backend.herokuapp.com')
+      .get('/api/modules')
+      .reply(200, {
+        module: [],
+      });
+    await store.dispatch(getModule(1)).then(() => {
       expect(store.getActions()).toMatchSnapshot();
       done();
     });

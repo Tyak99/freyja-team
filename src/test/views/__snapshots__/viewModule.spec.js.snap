@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View Module component should render ViewModule correctly 1`] = `
+<Fragment>
+  <Connect(Header) />
+  <Container
+    className="v-container"
+    fluid={true}
+    tag="div"
+  >
+    <Row
+      className="m-row"
+      tag="div"
+    >
+      <Col
+        className="v-sidebar"
+        sm="2"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <ModuleSidebar />
+      </Col>
+      <Col
+        sm="10"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <main
+          className="module-main"
+        >
+          <div
+            className="module-header"
+          >
+            <h2>
+              Getting Started
+            </h2>
+            <p
+              className="module-description"
+            >
+              introduction to customer learning
+            </p>
+          </div>
+          <div
+            className="module-content"
+          >
+            <p
+              className="content-header"
+            >
+              Content
+            </p>
+            <div
+              className="module-content-items"
+            >
+              <ContentList
+                contents={
+                  Array [
+                    Object {
+                      "id": 1,
+                      "link": "http://localhost:3000",
+                      "name": "Introduction",
+                    },
+                  ]
+                }
+              />
+            </div>
+          </div>
+          <Link
+            to="/test/4"
+          >
+            <Button
+              classname="test-button"
+              text="Take Test"
+              type="button"
+            />
+          </Link>
+        </main>
+      </Col>
+    </Row>
+  </Container>
+  <Footer />
+</Fragment>
+`;

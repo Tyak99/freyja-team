@@ -4,6 +4,7 @@ import profile from './profile';
 import authReducer from './authReducer';
 import modulesReducer from './modulesReducer';
 import communityM from './community';
+import testreducer from './testReducer';
 
 export const history = createBrowserHistory();
 
@@ -12,6 +13,7 @@ const appReducer = combineReducers({
   profile,
   modules: modulesReducer,
   community: communityM,
+  test: testreducer,
 });
 
 export default (state, action) => appReducer(state, action);

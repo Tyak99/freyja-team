@@ -34,7 +34,7 @@ export class Header extends React.Component {
           <Button type="button" text="Log in" classname="button-style" />
         </Link>
         <Link to="/signup">
-          <Button type="button" text="SignIn" classname="button-style" />
+          <Button type="button" text="Sign Up" classname="button-style" />
         </Link>
       </NavItem>
     );

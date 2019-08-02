@@ -10,12 +10,18 @@ export default {
     error: null,
   },
   modules: {
-    errors: {},
     modules: [],
+    singleModule: {},
+    errors: {},
   },
   community: {
     error: null,
     allMessages: {},
+    isLoading: false,
+  },
+  test: {
+    errors: {},
+    data: [],
     isLoading: false,
   },
 };

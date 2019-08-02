@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
-import { Card, CardBody } from 'reactstrap';
+import { Card } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/images/logo3.png';
@@ -12,7 +13,7 @@ import Button from '../../components/Button/index';
 import './signUp.scss';
 
 const SignUpForm = ({
-  onSubmit, onChange, authError, valError,
+  onSubmit, onChange, authError, valError, socialAuthPath,
 }) => (
   <Fragment>
     <section className="sec-signup">
@@ -79,28 +80,45 @@ const SignUpForm = ({
             <Button text="Sign up" />
           </form>
           <div className="btm">
-            <Link to="/signup" className="acct">
-              Already have an account
-            </Link>
             <br />
+            <p className="acct">
+              Already have an account?
+              <Link className="sign-up" to="/login">
+                {' '}
+                login
+              </Link>
+            </p>
 
-            <Link to="/dashboard" className="soc-media">
-              Register with Social media
-            </Link>
-            <br />
+            <p className="acct">
+              Register with Social media account
+            </p>
             <div>
-              <Link to="/signup" className="font">
+              <a
+                role="button"
+                tabIndex={0}
+                className="font"
+                onClick={() => socialAuthPath('twitter')}
+              >
                 <FontAwesomeIcon icon={['fab', 'twitter']} className="icon alt" />
-              </Link>
-              <Link to="/signup" className="font mid">
+              </a>
+              <a
+                role="button"
+                tabIndex={0}
+                onClick={() => socialAuthPath('facebook')}
+                className="font mid"
+              >
                 <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon alt" />
-              </Link>
-              <Link to="/signup" className="font">
+              </a>
+              <a
+                role="button"
+                tabIndex={0}
+                className="font"
+                onClick={() => socialAuthPath('google')}
+              >
                 <FontAwesomeIcon icon={['fab', 'google']} className="icon alt" />
-              </Link>
+              </a>
             </div>
           </div>
-          <CardBody />
         </Card>
       </div>
     </section>
@@ -109,6 +127,7 @@ const SignUpForm = ({
 SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  socialAuthPath: PropTypes.func.isRequired,
   valError: PropTypes.shape({
     status: PropTypes.number,
     firstName: PropTypes.string,
@@ -120,4 +139,4 @@ SignUpForm.propTypes = {
   }),
   authError: PropTypes.string,
 };
-export default SignUpForm;
+export default (SignUpForm);

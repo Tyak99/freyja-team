@@ -5,7 +5,8 @@ import { SignUp } from '../../views/Signup/SignUp';
 
 const historyMock = { push: jest.fn() };
 const props = {
-  registerUser: () => {},
+  registerAction: () => {},
+  socialSignOn: () => {},
   auth: {},
   errors: {},
 };
@@ -20,10 +21,12 @@ describe('Signup component', () => {
     wrapper = setUp();
     sinon.spy(SignUp.prototype, 'onChange');
     sinon.spy(SignUp.prototype, 'onSubmit');
+    sinon.spy(SignUp.prototype, 'componentDidMount');
   });
   afterEach(() => {
     SignUp.prototype.onChange.restore();
     SignUp.prototype.onSubmit.restore();
+    SignUp.prototype.componentDidMount.restore();
   });
   it('ensure onchange is called for firstname', (done) => {
     const event = { target: { name: 'firstName', value: 'spam' } };

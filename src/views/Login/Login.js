@@ -1,8 +1,10 @@
 /* eslint-disable react/destructuring-assignment */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
 import { Form } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, Redirect } from 'react-router-dom';
 import Logo from '../../assets/images/logo3.png';
 import Navbar from '../../components/Header/Header';
@@ -11,6 +13,7 @@ import Card from '../../components/Card/Card';
 import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
 import { loginUser } from '../../../store/actions/authActions';
+import { socialAuthPath, socialAuth, getToken } from '../../../store/actions/authActions/socialAuthActions';
 import './login.scss';
 
 export class Login extends Component {
@@ -25,6 +28,15 @@ export class Login extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.validateFormInput = this.validateFormInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const { location, socialSignOn } = this.props;
+    const tokenString = location && location.search;
+    if (tokenString) {
+      const token = getToken(tokenString);
+      socialSignOn(token);
+    }
   }
 
   handleChange(e) {
@@ -109,56 +121,88 @@ export class Login extends Component {
         <Navbar />
         <section className="l-container">
           <Card className="form-container">
-            <Form onSubmit={this.handleSubmit} id="form">
-              <div>
-                <p className="logo">
-                  <img src={Logo} alt="Logo" />
-                </p>
-                <h2 className="header"> LOGIN </h2>
-                <span className="error" id="form-feedback">
-                  {authError}
-                </span>
-              </div>
+            <div>
+              <Form onSubmit={this.handleSubmit} id="form">
+                <div>
+                  <p className="logo">
+                    <img src={Logo} alt="Logo" />
+                  </p>
+                  <h2 className="header"> LOGIN </h2>
+                  <span className="error" id="form-feedback">
+                    {authError}
+                  </span>
+                </div>
 
-              <Input
-                id="email-input"
-                onChange={this.handleChange}
-                type="text"
-                name="email"
-                value={this.state.email}
-                placeholder="Enter Email"
-              />
-              <span className="error">{email || ''}</span>
+                <Input
+                  id="email-input"
+                  onChange={this.handleChange}
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                  placeholder="Enter Email"
+                />
+                <span className="error">{email || ''}</span>
 
-              <Input
-                id="password-input"
-                onChange={this.handleChange}
-                type="password"
-                name="password"
-                value={this.state.password}
-                placeholder="Enter Password"
-              />
-              <span className="error">{password || ''}</span>
+                <Input
+                  id="password-input"
+                  onChange={this.handleChange}
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  placeholder="Enter Password"
+                />
+                <span className="error">{password || ''}</span>
 
-              <Button
-                type="submit"
-                classname="submit"
-                text={isLoading ? 'Please wait..' : 'Submit'}
-              />
-
-              <p>
-                <Link className="forgot-password" to="/password-reset">
+                <Button
+                  type="submit"
+                  classname="submit"
+                  text={isLoading ? 'Please wait..' : 'Submit'}
+                />
+              </Form>
+              <div className="btm">
+                <p>
+                  <Link className="forgot-password" to="/password-reset">
                   Forgot Password?
-                </Link>
-              </p>
-              <p>
+                  </Link>
+                </p>
+                <p>
                 Dont have an account yet?
-                <Link className="sign-up" to="/sign-up">
-                  {' '}
+                  <Link className="sign-up" to="/signup">
+                    {' '}
                   Sign Up
-                </Link>
-              </p>
-            </Form>
+                  </Link>
+                </p>
+                <p className="acct">
+                  Login with Social media account
+                </p>
+                <div>
+                  <a
+                    role="button"
+                    tabIndex={0}
+                    className="font"
+                    onClick={() => socialAuthPath('twitter')}
+                  >
+                    <FontAwesomeIcon icon={['fab', 'twitter']} className="icon alt" />
+                  </a>
+                  <a
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => socialAuthPath('facebook')}
+                    className="font mid"
+                  >
+                    <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon alt" />
+                  </a>
+                  <a
+                    role="button"
+                    tabIndex={0}
+                    className="font"
+                    onClick={() => socialAuthPath('google')}
+                  >
+                    <FontAwesomeIcon icon={['fab', 'google']} className="icon alt" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </Card>
         </section>
         <Footer />
@@ -169,11 +213,13 @@ export class Login extends Component {
 
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
+  socialSignOn: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     isLoading: PropTypes.bool,
     isAuthenticated: PropTypes.bool,
     errors: PropTypes.shape({ error: PropTypes.string }),
   }),
+  location: PropTypes.shape({ search: PropTypes.string }),
 };
 
 const mapStateToProps = state => ({
@@ -182,6 +228,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   loginUser,
+  socialSignOn: socialAuth,
 };
 
 export default connect(
