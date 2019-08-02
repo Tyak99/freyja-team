@@ -22,8 +22,8 @@ export class Community extends PureComponent {
     const getCommMessages = async () => {
       const { getCommunityMessages } = this.props;
       await getCommunityMessages();
-      const { message } = this.props;
-      this.setState({ messages: message });
+      const { messages } = this.props;
+      this.setState({ messages });
     };
     getCommMessages();
   }
@@ -77,11 +77,11 @@ export class Community extends PureComponent {
                 spinner
               ) : (
                 messages.map(msg => (
-                  <div className="posts_section" key={typeof msg.id === 'number' ? msg.id : ''}>
+                  <div className="posts_section" key={msg && msg.id}>
                     <h4 className="post_title">
-                      {msg.owner !== undefined ? msg.owner.lastName : ''}
+                      {msg.owner && msg.owner.lastName}
                       {' '}
-                      {msg.owner !== undefined ? msg.owner.firstName : ''}
+                      {msg.owner && msg.owner.firstName}
                     </h4>
                     <p className="timeCreated">
                       <Moment local format="LLLL">
@@ -89,8 +89,8 @@ export class Community extends PureComponent {
                       </Moment>
                     </p>
                     <p className="post_body">{msg.body}</p>
-                    <p className="poster_name">{msg.owner !== undefined ? msg.owner.userName : ''}</p>
-                    <p className="poster_role">{msg.owner !== undefined ? msg.owner.role : ''}</p>
+                    <p className="poster_name">{msg.owner && msg.owner.userName}</p>
+                    <p className="poster_role">{msg.owner && msg.owner.role}</p>
                     <hr />
                   </div>
                 ))
@@ -106,7 +106,7 @@ export class Community extends PureComponent {
 
 const mapStateToProps = state => ({
   loading: state.community.isLoading,
-  message: state.community.allMessages,
+  messages: state.community.allMessages,
   error: state.community.error,
 });
 
@@ -117,8 +117,8 @@ const mapDispatchToProps = {
 Community.propTypes = {
   getCommunityMessages: PropTypes.func,
   loading: PropTypes.bool,
-  message: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+  messages: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
     body: PropTypes.string,
   })),
 };

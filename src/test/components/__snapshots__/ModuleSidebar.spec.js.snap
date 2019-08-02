@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: ModuleSidebar should render correctly 1`] = `
+<aside
+  className="m-aside"
+>
+  <div
+    className="d-aside"
+  >
+    <div>
+      <span
+        className="d-logo"
+      >
+        <img
+          alt="logo"
+          src="test-file-stub"
+        />
+        Community
+      </span>
+    </div>
+    <ul
+      className="d-links"
+    >
+      <li
+        className="module-active"
+      >
+        <Link
+          to="/dashboard"
+        >
+          Modules
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/profile"
+        >
+          Profile
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/payment"
+        >
+          Payment
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/aboutus"
+        >
+          Help
+        </Link>
+      </li>
+    </ul>
+  </div>
+</aside>
+`;

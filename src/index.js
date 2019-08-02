@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  faCheckSquare, faPen, faUserEdit, faCamera, faUserFriends, faCertificate, faPeopleCarry, faLock,
+  faCheckSquare, faPen, faUserEdit, faCamera, faUserFriends, faCertificate, faPeopleCarry, faLock, faMicrophone,
 } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { BrowserRouter } from 'react-router-dom';
@@ -18,7 +18,7 @@ import './style.css';
 
 library.add(
   fab, faCheckSquare, faPen, faUserEdit, faCamera,
-  faUserFriends, faCertificate, faPeopleCarry, faLock,
+  faUserFriends, faCertificate, faPeopleCarry, faLock, faMicrophone,
 );
 const App = () => <Routes />;
 

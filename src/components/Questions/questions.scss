@@ -1,0 +1,63 @@
+$color: #212529;
+$fontcolor: #676666;
+$headingcolor: #6d6666;
+$altbgcolor: #f4f4f4;
+$bordercolor: #f2994a;
+
+.que-container {
+  width: 1200px;
+  margin: auto;
+  padding: 2% 15px;
+  color: $color;
+  font-size: 14px;
+
+  .spinner-container {
+    height: 100vh;
+    text-align: center;
+  }
+  .mod-name {
+    margin-right: 1%;
+  }
+  .newmodule,
+  .module {
+    color: $headingcolor;
+    font-size: 2rem;
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  .psub:active,
+  .psub:focus,
+  .psub {
+    background-color: $bordercolor;
+    border: none;
+    padding: 0.2% 2%;
+    margin-bottom: 2%;
+  }
+  #psub {
+    text-align: center;
+  }
+
+  .newmodule {
+    margin-top: 1%;
+    font-size: 1.5rem;
+  }
+  .m-col-adjust {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  .que-text {
+    margin-left: 2%;
+    padding-bottom: 2%;
+  }
+  p {
+    margin-top: 2%;
+    margin-left: 2%;
+  }
+  .psub {
+    margin-left: 2%;
+  }
+  .test-que {
+    margin-right: 2%;
+  }
+}

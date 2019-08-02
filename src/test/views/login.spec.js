@@ -92,4 +92,21 @@ describe('Login component methods', () => {
     form.simulate('submit', mockedEvent);
     expect(Login.prototype.handleSubmit.calledOnce).toBe(true);
   });
+
+  it('should handle email validation after form is submitted', () => {
+    const { enzymeWrapper } = shallowSetup();
+    enzymeWrapper.setState({
+      email: 'davidchizindumail.com',
+      password: '111111111',
+      validationErrors: {},
+    });
+
+    const form = enzymeWrapper.find('#form');
+    const mockedEvent = {
+      target: {},
+      preventDefault: () => ({}),
+    };
+    form.simulate('submit', mockedEvent);
+    expect(enzymeWrapper.state().validationErrors.email).toEqual('Enter a valid email address');
+  });
 });

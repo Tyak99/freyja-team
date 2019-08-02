@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import { registerUser } from '../../../store/actions/authActions';
+import { socialAuthPath, socialAuth, getToken } from '../../../store/actions/authActions/socialAuthActions';
 import Footer from '../../components/Footer/Footer';
 import SignUpForm from './SignUpForm';
 import './signUp.scss';
@@ -22,6 +24,15 @@ class SignUp extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { location, socialSignOn } = this.props;
+    const tokenString = location && location.search;
+    if (tokenString) {
+      const token = getToken(tokenString);
+      socialSignOn(token);
+    }
+  }
+
   onChange(e) {
     const { name } = e.target;
     const { value } = e.target;
@@ -29,8 +40,15 @@ class SignUp extends React.Component {
   }
 
   onSubmit(e) {
-    const { firstName, lastName, userName, email, password, confirmPassword } = this.state;
-    const { history } = this.props;
+    const {
+      firstName,
+      lastName,
+      userName,
+      email,
+      password,
+      confirmPassword,
+    } = this.state;
+    const { history, registerAction } = this.props;
     e.preventDefault();
     const newUser = {
       firstName,
@@ -40,10 +58,16 @@ class SignUp extends React.Component {
       password,
       confirmPassword,
     };
-    this.props.registerUser(newUser, history);
+    registerAction(newUser, history);
   }
 
   render() {
+    const { auth } = this.props;
+    const { isAuthenticated, errors } = auth;
+    if (isAuthenticated) {
+      return <Redirect to="/dashboard" />;
+    }
+
     let valError;
     let authError;
     const { firstName, lastName, userName, email, password, confirmPassword } = this.state;
@@ -56,8 +80,6 @@ class SignUp extends React.Component {
       confirmPassword,
     };
 
-    const { auth } = this.props;
-    const { errors } = auth;
     if (errors && !(Object.keys(errors).length === 0 && errors.constructor === Object)) {
       const { validationErrors, isValid } = validateSignupInput(newUser);
       if (typeof errors === 'string') {
@@ -75,6 +97,7 @@ class SignUp extends React.Component {
           onChange={e => this.onChange(e)}
           valError={valError}
           authError={authError}
+          socialAuthPath={socialAuthPath}
         />
         <Footer />
       </Fragment>
@@ -83,20 +106,37 @@ class SignUp extends React.Component {
 }
 
 SignUp.propTypes = {
-  registerUser: PropTypes.func.isRequired,
+  socialSignOn: PropTypes.func.isRequired,
+  registerAction: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     root: PropTypes.string,
     errors: PropTypes.any,
+    isAuthenticated: PropTypes.bool,
   }),
   history: PropTypes.shape({ root: PropTypes.string }),
+  location: PropTypes.shape({ search: PropTypes.string }),
 };
 const mapStateToProps = state => ({
   auth: state.auth,
 });
 
+/**
+ * @method mapDispatchToProps
+ * @description maps redux actions to props
+ * @param {callback} dispatch destructured reducer state object
+ * @returns {object} state
+ */
+export const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    registerAction: registerUser,
+    socialSignOn: socialAuth,
+  },
+  dispatch,
+);
+
 const signUpPage = connect(
   mapStateToProps,
-  { registerUser },
+  mapDispatchToProps,
 )(withRouter(SignUp));
 export default signUpPage;
 export { SignUp };

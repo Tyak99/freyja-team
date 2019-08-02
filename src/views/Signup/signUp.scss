@@ -44,8 +44,14 @@ html {
   }
 }
 
-.font {
+a.font {
   width: 30%;
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  :hover {
+    color: $orangecolor;
+  }
 }
 
 .boxx-tex {
@@ -60,6 +66,7 @@ html {
 .input {
   margin: auto;
 }
+
 
 .sign-form .b-button {
   background-color: $orangecolor;
@@ -100,14 +107,24 @@ html {
 }
 
 .btm {
+  text-align: center;
   a:hover {
     color: $orangecolor;
     text-decoration: none;
+    box-shadow: 0 4px 4px rgba(54, 52, 52, 0.4);
+  }
+  a:focus{
+    outline: none;
   }
 
   a {
     color: $linkcolor;
     font-weight: normal;
+  }
+  a.sign-up {
+    color: $orangecolor;
+    font-size: 15px;
+    padding: 3px;
   }
 
   .mid {
@@ -119,11 +136,10 @@ html {
   padding: 1.5rem;
 }
 
-.acct,
-.soc-media {
+.acct {
   color: $linkcolor;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 5%;
   margin-top: 0.8%;
 }
