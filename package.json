@@ -87,7 +87,7 @@
     "jest-static-stubs": "0.0.1",
     "moment": "^2.24.0",
     "nock": "^10.0.6",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nyc": "^14.1.1",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.8.6",
